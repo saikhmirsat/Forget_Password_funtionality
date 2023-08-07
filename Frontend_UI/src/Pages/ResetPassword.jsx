@@ -26,7 +26,7 @@ export default function ResetPassword() {
     try {
       const obj = { email: email }; // Replace with the actual email
 
-      await fetch("http://localhost:8080/users/resetpassword", {
+      await fetch("https://puce-exuberant-starfish.cyclic.app/users/resetpassword", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {

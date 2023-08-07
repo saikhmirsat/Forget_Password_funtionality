@@ -11,7 +11,7 @@ export default function ForgetPassword() {
     try {
       const obj = { password: pass }; // Replace with the actual password
 
-      await fetch(`http://localhost:8080/users/forgetpassword/${id}/${token}`, {
+      await fetch(`https://puce-exuberant-starfish.cyclic.app/users/forgetpassword/${id}/${token}`, {
         method: "PATCH",
         body: JSON.stringify(obj),
         headers: {

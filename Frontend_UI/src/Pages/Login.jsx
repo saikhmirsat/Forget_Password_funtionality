@@ -20,7 +20,7 @@ export default function Login() {
       };
 
       try {
-        await fetch(`http://localhost:8080/users/login`, {
+        await fetch(`https://puce-exuberant-starfish.cyclic.app/users/login`, {
           method: "POST",
           body: JSON.stringify(obj),
           headers: {

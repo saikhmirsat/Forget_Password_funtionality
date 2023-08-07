@@ -101,7 +101,7 @@ export default function Register() {
       };
       console.log(obj);
       try {
-        await fetch(`http://localhost:8080/users/register`, {
+        await fetch(`https://puce-exuberant-starfish.cyclic.app/users/register`, {
           method: "POST",
           body: JSON.stringify(obj),
           headers: {
