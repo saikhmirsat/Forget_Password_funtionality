@@ -11,13 +11,16 @@ export default function ForgetPassword() {
     try {
       const obj = { password: pass }; // Replace with the actual password
 
-      await fetch(`https://puce-exuberant-starfish.cyclic.app/users/forgetpassword/${id}/${token}`, {
-        method: "PATCH",
-        body: JSON.stringify(obj),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
+      await fetch(
+        `https://puce-exuberant-starfish.cyclic.app/users/forgetpassword/${id}/${token}`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(obj),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           if (res.success == true) {
@@ -26,6 +29,7 @@ export default function ForgetPassword() {
           }
           if (res.success == false) {
             alert(res.message);
+            navigate("/resetpassword");
           }
           console.log(res);
         }); // Corrected typo here
