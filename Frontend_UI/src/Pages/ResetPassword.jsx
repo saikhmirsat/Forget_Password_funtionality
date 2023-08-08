@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function ResetPassword() {
   const [email, setEmail] = useState("");
-  const [msg, setMsg] = useState(true);
+  const [msg, setMsg] = useState(false);
 
   const [remainingTime, setRemainingTime] = useState(120);
 
@@ -26,13 +26,16 @@ export default function ResetPassword() {
     try {
       const obj = { email: email }; // Replace with the actual email
 
-      await fetch("https://puce-exuberant-starfish.cyclic.app/users/resetpassword", {
-        method: "POST",
-        body: JSON.stringify(obj),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
+      await fetch(
+        "https://puce-exuberant-starfish.cyclic.app/users/resetpassword",
+        {
+          method: "POST",
+          body: JSON.stringify(obj),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((res) => {
           if (res.success == true) {
