@@ -23,6 +23,7 @@ export default function ResetPassword() {
   };
 
   const CheckFunc = async () => {
+    setMsg(false);
     try {
       const obj = { email: email }; // Replace with the actual email
 
