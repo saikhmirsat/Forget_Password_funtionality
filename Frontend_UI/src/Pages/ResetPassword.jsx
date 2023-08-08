@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import jwtDecode from "jwt-decode";
 
 export default function ResetPassword() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,6 @@ export default function ResetPassword() {
   };
 
   const CheckFunc = async () => {
-    setMsg(false);
     try {
       const obj = { email: email }; // Replace with the actual email
 

@@ -8,6 +8,9 @@ export default function ForgetPassword() {
   const navigate = useNavigate();
 
   const PasswordUpdateFunc = async () => {
+    if (pass == "") {
+      alert("Please check password");
+    }
     try {
       const obj = { password: pass }; // Replace with the actual password
 
